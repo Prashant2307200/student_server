@@ -1,0 +1,44 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "prisma": {
+    "schema": "./prisma/schema.prisma"
+  },
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "tsc-watch --onSuccess \"node dist/index.js\"",
+    "postinstall": "prisma generate",
+    "build": "npx tsc",
+    "init_prisma": "npx prisma init",
+    "prisma_migrate": "npx prisma migrate dev --name init",
+    "prisma_generate": "npx prisma generate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "^6.1.0",
+    "@supabase/supabase-js": "^2.47.8",
+    "compression": "^1.7.5",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "pino": "^9.5.0"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.7.5",
+    "@types/cookie-parser": "^1.4.8",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "prisma": "^6.1.0",
+    "tsc-watch": "^6.2.1",
+    "typescript": "^5.7.2"
+  }
+}
