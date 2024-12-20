@@ -25,13 +25,12 @@ app.use(express.urlencoded({
     extended: true,
     limit: maxRequestSize,
 }));
-// app.use(compressionConfig);
-// secure backend
-// app.use(helmetConfig);
-// app.use(corsConfig);
-// app.disable("x-powered-by");
-// app.use(limiter);
-// app.set("trust proxy", 1);
+app.use(compressionConfig);
+app.use(helmetConfig);
+app.use(corsConfig);
+app.disable("x-powered-by");
+app.use(limiter);
+app.set("trust proxy", 1);
 app.use(cookieConfig);
 app.get('/', (req, res) => {
     res.send("server is running...");
